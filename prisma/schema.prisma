@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  price       Int      // stored in cents — $59.99 = 5999
+  genre       String
+  platform    String
+  imageUrl    String
+  releaseYear Int
+  publisher   String
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  favorites   Favorite[]
+
+  @@index([genre])
+  @@index([platform])
+}
+
+model User {
+  id        String   @id
+  email     String   @unique
+  name      String
+  role      Role     @default(CUSTOMER)
+  createdAt DateTime @default(now())
+
+  favorites  Favorite[]
+
+  // better-auth requires these relations:
+  sessions   Session[]
+  accounts   Account[]
+}
+
+model Session {
+  id        String   @id
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id           String  @id
+  userId       String
+  providerId   String
+  accountId    String
+  accessToken  String?
+  refreshToken String?
+  expiresAt    DateTime?
+  user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([providerId, accountId])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])  // one favorite per game per user
+  @@index([userId])              // fast lookup: all favorites for a user
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
