@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Manrope, Inter, Geist } from 'next/font/google'
 import { cn } from "@/lib/utils";
+import { AppHeader } from "@/components/app-header";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -26,10 +27,11 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn(manrope.variable, inter.variable, "font-sans", geist.variable)}>
+    <html lang="en" className={cn(manrope.variable, inter.variable, "font-sans dark", geist.variable)}>
       <body
         className={`${inter.className} min-h-screen bg-[--color-background] text-[--color-text-primary]`}
       >
+        <AppHeader />
         {children}
       </body>
     </html>

@@ -1,22 +1,21 @@
-# Current Feature: Platform Badge
+# Current Feature: App Header
 
 ## Status
-Complete
+Not Started
 
 ## Goals
-- Create a reusable `PlatformBadge` component at `components/platform-badge.tsx`.
-- Render the game platform as a small uppercase badge with `px-2`, `py-0.5`, `rounded`, `tracking-wider`, and `text-[10px]`.
-- Use a transparent background with a low-contrast border via `border border-[--color-border]`.
-- Render platform text with `text-[--color-text-secondary]`.
-- Keep the component as a Server Component because it is pure display with no client-side interactivity.
+- Create a reusable `AppHeader` Server Component at `components/app-header.tsx`.
+- Render brand and auth-aware navigation states for logged-out users, customers, and admins.
+- Use server-side session lookup via `getSession()` from `lib/require-auth.ts` to drive link visibility.
+- Implement sign-out as a form-based Server Action submission (mutation pattern, not a link).
+- Match design-spec header behavior: lightweight shell styling, visible active nav state, and keyboard-focusable controls.
 
 ## Notes
-- Design authority comes from `specs/design/design-refernce.png`, `specs/design/homepage-reference.png`, and `specs/design/game-detail-reference.png`.
-- If the written feature notes conflict with the PNG references, follow the PNGs.
-- The visual language should stay more neutral than `GenreBadge`, using a muted outlined treatment instead of genre color fills.
-- The current repo already has a `GenreBadge` component that establishes the expected chip scale and badge-only server rendering pattern.
-- The spec mentions an icon concept, but the written requirements only guarantee platform text and neutral chip styling. Any icon decision should be validated against the PNG references before implementation.
+- Source spec: `specs/context/features/app-header-spec.md`.
+- Render in the shared storefront shell unless a route-specific layout intentionally replaces it.
+- Typography should follow project tokens (`Manrope` display, `Inter` nav/body), not Space Grotesk.
+- Keep header scope intentionally small for this version: no mobile hamburger, no search, no cart.
+- Accessibility expectations are explicit: visible active nav treatment, readable contrast, and keyboard focus-visible states.
 
 ## History
-- Loaded from `specs/context/features/platform-badge-spec.md` on 2026-04-13.
-- Completed on 2026-04-13 with a reusable `PlatformBadge` Server Component, neutral outlined badge styling, and a homepage preview wired to the shared component.
+- Loaded from `specs/context/features/app-header-spec.md` on 2026-04-13.
