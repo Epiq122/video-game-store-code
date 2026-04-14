@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Gamepad2, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const footerLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -29,19 +31,19 @@ export function AppFooter() {
               <label htmlFor="vault-newsletter-email" className="sr-only">
                 Email address
               </label>
-              <input
+              <Input
                 id="vault-newsletter-email"
                 type="email"
                 name="email"
                 placeholder="Your email address"
-                className="h-10 flex-1 rounded-md border border-[--color-border] bg-[--color-background] px-3 text-sm text-[--color-text-primary] placeholder:text-[--color-text-secondary] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
+                className="h-10 flex-1 border-[--color-border] bg-[--color-background] px-3 text-sm text-[--color-text-primary] placeholder:text-[--color-text-secondary] focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
               />
-              <button
+              <Button
                 type="button"
-                className="inline-flex h-10 shrink-0 items-center justify-center rounded-md bg-white/90 px-4 text-sm font-semibold text-[#111827] transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
+                className="h-10 shrink-0 bg-white/90 px-4 text-sm font-semibold text-[#111827] transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
               >
                 Join Free
-              </button>
+              </Button>
             </form>
           </section>
 

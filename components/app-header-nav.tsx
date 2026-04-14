@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 type NavItem = {
   href: string;
@@ -31,19 +32,25 @@ export function AppHeaderNav({ items }: AppHeaderNavProps) {
         const isActive = pathname ? isActivePath(pathname, item.href) : false;
 
         return (
-          <Link
+          <Button
             key={item.href}
-            href={item.href}
-            aria-current={isActive ? "page" : undefined}
+            asChild
+            variant="ghost"
+            size="sm"
             className={cn(
-              "inline-flex h-8 items-center rounded-md px-2 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]",
+              "h-8 px-2 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]",
               isActive
                 ? "text-[--color-text-primary] underline decoration-[1.5px] underline-offset-4"
                 : "text-[--color-text-secondary] hover:text-[--color-text-primary]",
             )}
           >
-            {item.label}
-          </Link>
+            <Link
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {item.label}
+            </Link>
+          </Button>
         );
       })}
     </nav>

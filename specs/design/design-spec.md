@@ -399,18 +399,19 @@ Supporting UI patterns that must follow this spec:
 1. PixelVault is the product name in all UI and copy.
 2. `design-refernce.png` is a visual token board, not the naming source of truth.
 3. Use semantic tokens rather than hard-coded color values in component implementations.
-4. Headlines use `Manrope`; body and UI text use `Inter`.
-5. Product covers always use a 3:4 aspect ratio and must never stretch.
-6. Prices always display two decimal places.
-7. Primary CTAs use the lavender brand action treatment.
-8. Secondary actions remain dark and subordinate to the primary CTA.
-9. Genre and platform chips default to dark or indigo-toned pills; do not restore the old multicolor genre system unless a future design explicitly requires it.
-10. Auth submit buttons are full width and visually dominant.
-11. Every auth field has a visible label above the input.
-12. Password fields include a stable show or hide affordance.
-13. Hero and promotional imagery must use overlays that preserve text readability.
-14. Admin uses a dedicated shell with sidebar navigation and dense table styling.
-15. Focus-visible styles are required on all interactive controls.
-16. Error states must appear at the field level for forms.
-17. Hover and selected states must be distinguishable beyond color alone when practical.
-18. Decorative background glow supports the content and should never overpower it.
+4. When implementing components, prioritize using the established `shadcn/ui` components from `components/ui/` (e.g., Button, Input, Badge, Card) over custom HTML markup. Extend them with the design spec tokens where necessary.
+5. Headlines use `Manrope`; body and UI text use `Inter`.
+6. Product covers always use a 3:4 aspect ratio and must never stretch.
+7. Prices always display two decimal places.
+8. Primary CTAs use the lavender brand action treatment.
+9. Secondary actions remain dark and subordinate to the primary CTA.
+10. Genre and platform chips default to dark or indigo-toned pills; do not restore the old multicolor genre system unless a future design explicitly requires it.
+11. Auth submit buttons are full width and visually dominant.
+12. Every auth field has a visible label above the input.
+13. Password fields include a stable show or hide affordance.
+14. Hero and promotional imagery must use overlays that preserve text readability.
+15. Admin uses a dedicated shell with sidebar navigation and dense table styling.
+16. Focus-visible styles are required on all interactive controls.
+17. Error states must appear at the field level for forms.
+18. Hover and selected states must be distinguishable beyond color alone when practical.
+19. Decorative background glow supports the content and should never overpower it.

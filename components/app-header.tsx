@@ -6,6 +6,7 @@ import { auth } from "@/lib/auth";
 import { getSession } from "@/lib/require-auth";
 
 import { AppHeaderNav } from "@/components/app-header-nav";
+import { Button } from "@/components/ui/button";
 
 async function signOutAction() {
   "use server";
@@ -51,28 +52,28 @@ export async function AppHeader() {
                 {userLabel}
               </p>
               <form action={signOutAction}>
-                <button
+                <Button
                   type="submit"
-                  className="inline-flex h-8 items-center rounded-md border border-[--color-border] px-3 text-xs font-medium text-[--color-text-secondary] transition-colors hover:border-white/20 hover:text-[--color-text-primary] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
+                  variant="outline"
+                  size="sm"
+                  className="h-8 px-3 text-xs font-medium text-[--color-text-secondary] transition-colors hover:border-white/20 hover:text-[--color-text-primary] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
                 >
                   Sign Out
-                </button>
+                </Button>
               </form>
             </>
           ) : (
             <>
-              <Link
-                href="/auth/sign-in"
-                className="inline-flex h-8 items-center rounded-md px-2 text-xs font-medium text-[--color-text-secondary] transition-colors hover:text-[--color-text-primary] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/auth/sign-up"
-                className="inline-flex h-8 items-center rounded-md bg-[#8f92ff] px-3 text-xs font-semibold text-[#111827] transition-colors hover:bg-[#a3a6ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]"
-              >
-                Sign Up
-              </Link>
+              <Button asChild variant="ghost" size="sm" className="h-8 px-2 text-xs font-medium text-[--color-text-secondary] transition-colors hover:text-[--color-text-primary] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]">
+                <Link href="/auth/sign-in">
+                  Sign In
+                </Link>
+              </Button>
+              <Button asChild size="sm" className="h-8 bg-[#8f92ff] px-3 text-xs font-semibold text-[#111827] transition-colors hover:bg-[#a3a6ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[--color-ring] focus-visible:ring-offset-2 focus-visible:ring-offset-[--color-surface]">
+                <Link href="/auth/sign-up">
+                  Sign Up
+                </Link>
+              </Button>
             </>
           )}
         </div>

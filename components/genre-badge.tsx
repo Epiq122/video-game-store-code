@@ -1,3 +1,5 @@
+import { Badge } from "@/components/ui/badge";
+
 const genreColours: Record<string, string> = {
   Action: "var(--color-genre-action)",
   RPG: "var(--color-genre-rpg)",
@@ -17,12 +19,13 @@ export function GenreBadge({ genre }: GenreBadgeProps) {
   const textColor = isKnownGenre ? "#ffffff" : "#111827";
 
   return (
-    <span
-      className="inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em]"
+    <Badge
+      variant="outline"
+      className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] border-transparent"
       data-known-genre={isKnownGenre}
       style={{ backgroundColor, color: textColor }}
     >
       {genre}
-    </span>
+    </Badge>
   );
 }
