@@ -6,6 +6,8 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--muted-foreground);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --font-sans: var(--font-sans);

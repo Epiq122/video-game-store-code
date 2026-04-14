@@ -1,4 +1,5 @@
 import { GenreBadge } from "@/components/genre-badge";
+import { PlatformBadge } from "@/components/platform-badge";
 
 export default function Home() {
   const genres = [
@@ -10,6 +11,7 @@ export default function Home() {
     "Adventure",
     "Unknown",
   ];
+  const platforms = ["PC", "PS5", "Xbox Series X", "Switch 2"];
 
   return (
     <main
@@ -38,21 +40,35 @@ export default function Home() {
               <p className="max-w-2xl text-sm leading-7 text-[#aab3c5] md:text-[15px]">
                 The badge preview now sits inside a dark elevated surface with
                 the same restrained, premium direction used across PixelVault.
-                The component still demonstrates the supported genre palette and
-                fallback treatment, but in a layout that reads like real product
-                metadata instead of a raw component sandbox.
+                Genre badges carry the colored taxonomy treatment, while
+                platform badges stay neutral and outlined so they read like
+                compact product metadata instead of competing with the primary
+                content.
               </p>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7f8aa3]">
-              Genre
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {genres.map((genre) => (
-                <GenreBadge key={genre} genre={genre} />
-              ))}
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7f8aa3]">
+                Genre
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {genres.map((genre) => (
+                  <GenreBadge key={genre} genre={genre} />
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7f8aa3]">
+                Platform
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {platforms.map((platform) => (
+                  <PlatformBadge key={platform} platform={platform} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -72,9 +88,7 @@ export default function Home() {
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   <GenreBadge genre="Action" />
-                  <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#d8deff]">
-                    PC
-                  </span>
+                  <PlatformBadge platform="PC" />
                 </div>
                 <p className="text-sm leading-6 text-[#aab3c5]">
                   Genre chips belong in the metadata stack, paired with other
