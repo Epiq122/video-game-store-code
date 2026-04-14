@@ -1,22 +1,22 @@
 ---
-name: arcana-code-quality
-description: Umbrella code-quality workflow for Arcana Vault. Use when the user wants a broader audit or wants the Codex equivalent of the OpenCode arcana-code-quality skill.
+name: video-game-store-code-quality
+description: Umbrella code-quality workflow for the Video Game Store project. Use when the user wants a broader audit or wants the Codex equivalent of the OpenCode project code-quality skill.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Code Quality
+# Video Game Store Code Quality
 
-This is the Codex equivalent of the OpenCode `arcana-code-quality` skill.
+This is the Codex equivalent of the OpenCode project code-quality skill.
 
 Use it when the user wants one of these workflows or a broader code-quality sweep:
 
-- `arcana-code-scanner`
-- `arcana-auth-auditor`
-- `arcana-refactor-scanner`
-- `arcana-cleanup`
-- `arcana-ui-reviewer`
+- `video-game-store-code-scanner`
+- `video-game-store-auth-auditor`
+- `video-game-store-refactor-scanner`
+- `video-game-store-cleanup`
+- `video-game-store-ui-reviewer`
 
 ## Required context
 

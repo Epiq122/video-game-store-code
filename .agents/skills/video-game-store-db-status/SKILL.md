@@ -1,12 +1,12 @@
 ---
-name: arcana-db-status
-description: Database status workflow for Arcana Vault. Use as the Codex equivalent of /db-status when Prisma is present.
+name: video-game-store-db-status
+description: Database status workflow for the Video Game Store project. Use as the Codex equivalent of /db-status when Prisma is present.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana DB Status
+# Video Game Store DB Status
 
 Use this skill for the Codex equivalent of `/db-status`.
 

@@ -1,12 +1,12 @@
 ---
-name: arcana-ui-reviewer
-description: UI and responsive review workflow for Arcana Vault using the project spec and source verification. Use as the Codex equivalent of /ui-reviewer.
+name: video-game-store-ui-reviewer
+description: UI and responsive review workflow for the Video Game Store project using the project spec and source verification. Use as the Codex equivalent of /ui-reviewer.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana UI Reviewer
+# Video Game Store UI Reviewer
 
 Use this skill for the Codex equivalent of `/ui-reviewer`.
 

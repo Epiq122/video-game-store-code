@@ -1,12 +1,12 @@
 ---
-name: arcana-auth-auditor
-description: Authentication and authorization audit workflow for Arcana Vault. Use when the user wants the Codex equivalent of /auth-auditor.
+name: video-game-store-auth-auditor
+description: Authentication and authorization audit workflow for the Video Game Store project. Use when the user wants the Codex equivalent of /auth-auditor.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Auth Auditor
+# Video Game Store Auth Auditor
 
 Use this skill for the Codex equivalent of `/auth-auditor`.
 

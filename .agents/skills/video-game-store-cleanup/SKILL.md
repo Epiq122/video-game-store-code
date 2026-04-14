@@ -1,12 +1,12 @@
 ---
-name: arcana-cleanup
-description: Cleanup workflow for Arcana Vault. Use as the Codex equivalent of /cleanup for reporting or selectively fixing stale code and repo drift.
+name: video-game-store-cleanup
+description: Cleanup workflow for the Video Game Store project. Use as the Codex equivalent of /cleanup for reporting or selectively fixing stale code and repo drift.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Cleanup
+# Video Game Store Cleanup
 
 Use this skill for the Codex equivalent of `/cleanup`.
 

@@ -1,12 +1,12 @@
 ---
-name: arcana-feature
-description: Full feature workflow for Arcana Vault. Use for loading a feature spec, planning implementation, building, testing, reviewing, explaining, and completing work under the project's Next.js 16 rules.
+name: video-game-store-feature
+description: Full feature workflow for the Video Game Store project. Use for loading a feature spec, planning implementation, building, testing, reviewing, explaining, and completing work under the project's Next.js 16 rules.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Feature
+# Video Game Store Feature
 
 Use this skill when the user wants the Codex equivalent of `/feature`.
 

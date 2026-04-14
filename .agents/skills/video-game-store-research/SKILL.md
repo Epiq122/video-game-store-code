@@ -1,12 +1,12 @@
 ---
-name: arcana-research
-description: Research-task workflow for Arcana Vault. Use as the Codex equivalent of /research to produce documentation from a prompt file.
+name: video-game-store-research
+description: Research-task workflow for the Video Game Store project. Use as the Codex equivalent of /research to produce documentation from a prompt file.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Research
+# Video Game Store Research
 
 Use this skill for the Codex equivalent of `/research`.
 

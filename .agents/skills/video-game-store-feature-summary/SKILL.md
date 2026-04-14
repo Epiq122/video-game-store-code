@@ -1,12 +1,12 @@
 ---
-name: arcana-feature-summary
-description: Summarize the active Arcana Vault feature from specs/context/current-feature.md and suggest the next step in the workflow.
+name: video-game-store-feature-summary
+description: Summarize the active Video Game Store feature from specs/context/current-feature.md and suggest the next step in the workflow.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Feature Summary
+# Video Game Store Feature Summary
 
 Codex equivalent of `/feature-summary`.
 
@@ -17,7 +17,7 @@ Codex equivalent of `/feature-summary`.
    - main goals
    - important notes or constraints
 3. Suggest the next step:
-   - `Not Started` -> use `arcana-feature` with `load` or `start`
+   - `Not Started` -> use `video-game-store-feature` with `load` or `start`
    - `In Progress` -> continue implementation or run the `test` phase
    - likely complete -> run the `review` phase
    - `Complete` -> finalize or move to the next spec

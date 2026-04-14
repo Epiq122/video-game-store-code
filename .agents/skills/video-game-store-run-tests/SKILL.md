@@ -1,12 +1,12 @@
 ---
-name: arcana-run-tests
-description: Test runner workflow for Arcana Vault. Use as the Codex equivalent of /run-tests.
+name: video-game-store-run-tests
+description: Test runner workflow for the Video Game Store project. Use as the Codex equivalent of /run-tests.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Run Tests
+# Video Game Store Run Tests
 
 Use this skill for the Codex equivalent of `/run-tests`.
 

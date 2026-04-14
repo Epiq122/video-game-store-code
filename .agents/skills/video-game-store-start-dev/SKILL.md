@@ -1,12 +1,12 @@
 ---
-name: arcana-start-dev
-description: Development server workflow for Arcana Vault. Use as the Codex equivalent of /start-dev.
+name: video-game-store-start-dev
+description: Development server workflow for the Video Game Store project. Use as the Codex equivalent of /start-dev.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Start Dev
+# Video Game Store Start Dev
 
 Use this skill for the Codex equivalent of `/start-dev`.
 

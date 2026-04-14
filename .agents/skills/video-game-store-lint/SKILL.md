@@ -1,12 +1,12 @@
 ---
-name: arcana-lint
-description: Lint and formatting workflow for Arcana Vault. Use as the Codex equivalent of /lint.
+name: video-game-store-lint
+description: Lint and formatting workflow for the Video Game Store project. Use as the Codex equivalent of /lint.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Lint
+# Video Game Store Lint
 
 Use this skill for the Codex equivalent of `/lint`.
 

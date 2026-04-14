@@ -1,12 +1,12 @@
 ---
-name: arcana-refactor-scanner
-description: Scan Arcana Vault for duplicated logic and extraction opportunities. Use as the Codex equivalent of /refactor-scanner.
+name: video-game-store-refactor-scanner
+description: Scan the Video Game Store project for duplicated logic and extraction opportunities. Use as the Codex equivalent of /refactor-scanner.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Refactor Scanner
+# Video Game Store Refactor Scanner
 
 Use this skill for the Codex equivalent of `/refactor-scanner`.
 

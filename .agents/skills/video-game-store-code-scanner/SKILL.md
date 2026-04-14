@@ -1,12 +1,12 @@
 ---
-name: arcana-code-scanner
-description: Code quality scanner for Arcana Vault. Use when the user wants the Codex equivalent of /code-scanner on the whole repo or a specific folder.
+name: video-game-store-code-scanner
+description: Code quality scanner for the Video Game Store project. Use when the user wants the Codex equivalent of /code-scanner on the whole repo or a specific folder.
 metadata:
   author: local
   version: "1.0.0"
 ---
 
-# Arcana Code Scanner
+# Video Game Store Code Scanner
 
 Use this skill for the Codex equivalent of `/code-scanner`.
 
