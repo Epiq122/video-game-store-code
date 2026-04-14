@@ -2,6 +2,7 @@ import "./globals.css";
 import { Manrope, Inter, Geist } from 'next/font/google'
 import { cn } from "@/lib/utils";
 import { AppHeader } from "@/components/app-header";
+import { AppFooter } from "@/components/app-footer";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <AppHeader />
         {children}
+        <AppFooter />
       </body>
     </html>
   )
