@@ -2,7 +2,7 @@
 
 ## Feature Title
 
-Game Card
+Product Filters
 
 ## Status
 
@@ -10,22 +10,23 @@ Complete
 
 ## Goals
 
-- Create or update `components/game-card.tsx` as the reusable storefront product card.
-- Match the shared PixelVault design language from `specs/design/design-spec.md`.
-- Match the visual composition from `specs/design/homepage-reference.png` and `specs/design/game-detail-reference.png`.
-- Keep the card poster-first with a `3:4` image, compact metadata, restrained hover treatment, and indigo/lavender price emphasis.
-- Ensure the card links to `/games/[game.slug]` and remains a Server Component.
+- Create `components/product-filters.tsx` as homepage interactive catalog section.
+- Keep homepage data flow aligned with current app architecture: Server Component chooses initial games, Client Component refines by search and filters.
+- Match PixelVault storefront design language for toolbar, chips, spacing, focus states, and grid rhythm.
+- Derive genre and platform filter options from actual homepage game data rather than hard-coded mismatched labels.
+- Preserve existing `GameCard` link flow to `/games/[slug]`.
 
 ## Notes
 
-- The written game card spec now defers to the PNG references when there is any conflict.
-- Use the project display font token (`Manrope`) for the title and price, not Space Grotesk.
-- Product titles should wrap to two lines at most rather than hard truncating to one line.
-- Metadata should stay compact and muted so the poster remains the focal point.
-- Standard grid cards should avoid loud glow effects or overly colorful chip treatment.
-- Related existing files likely include `components/genre-badge.tsx`, `components/platform-badge.tsx`, and any route that renders the storefront grid.
+- Feature loaded from `specs/context/features/product-filters-spec.md`.
+- Current homepage flow is local and curated, not full-catalog database search yet.
+- Filtering should stay client-side for this homepage feature.
+- Filter toolbar belongs below homepage intro/hero content inside dark panel.
+- Grid should follow storefront layout rhythm: 1 / 2 / 3 / 4 columns across breakpoints.
+- Platform filters must match actual current values unless explicit normalization layer is added.
+- Current card metadata styling should be reconciled with design spec so filters and cards feel like one system.
 
 ## History
 
-- Loaded from `specs/context/features/game-card-spec.md` on 2026-04-13.
-- Completed on 2026-04-13: added a reusable `components/game-card.tsx`, updated the homepage to render a real storefront card grid, and enabled remote poster images for `next/image`.
+- Loaded from `specs/context/features/product-filters-spec.md` on 2026-04-13.
+- Completed on 2026-04-13: added `components/product-filters.tsx`, moved homepage catalog refinement into a client filter UI, aligned homepage chips with the PixelVault design system, and promoted reusable filter-button styling into shared `shadcn/ui` button variants and semantic tokens.

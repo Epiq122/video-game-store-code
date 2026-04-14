@@ -10,6 +10,7 @@ Tailwind v4 · shadcn/ui · Zod v4
 - App Router only. No Pages Router. No exceptions.
 - Server Components by default. Add "use client" only when required.
 - TypeScript strict mode is enabled. Do not weaken it.
+- Prefer `shadcn/ui` primitives from `components/ui/` whenever they fit the UI pattern. Extend shared variants before creating bespoke component markup.
 - All database access via Prisma. No raw SQL.
 - All mutations via Server Actions. No client-side fetch to API routes for mutations.
 - Zod validation in every Server Action before any database call.
