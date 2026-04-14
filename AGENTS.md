@@ -2,12 +2,14 @@
 
 ## Project
 PixelVault is a full-stack video game store.
-Next.js 16 · React 19.2 · TypeScript · Prisma · Neon · better-auth
+Next.js 16 · React 19.2 · TypeScript · Prisma 7 · Neon · better-auth
 Tailwind v4 · shadcn/ui · Zod v4
 
 ## Stack rules
+- `pnpm` only.
 - App Router only. No Pages Router. No exceptions.
 - Server Components by default. Add "use client" only when required.
+- TypeScript strict mode is enabled. Do not weaken it.
 - All database access via Prisma. No raw SQL.
 - All mutations via Server Actions. No client-side fetch to API routes for mutations.
 - Zod validation in every Server Action before any database call.
@@ -17,13 +19,46 @@ Tailwind v4 · shadcn/ui · Zod v4
 - Use `proxy.ts` for route protection, not `middleware.ts`.
 
 ## File structure
-- app/ — Next.js App Router pages and layouts
-- app/_actions/ — Server Actions (all mutations live here)
-- app/api/ — Route Handlers (streaming, webhooks)
-- components/ — Shared UI components
-- lib/ — Utilities (db.ts, auth.ts, utils.ts)
-- prisma/ — Schema and migrations
-- specs/ — Feature specifications (read these before building)
+- `app/` — application routes, pages, layouts, and route-owned UI
+  Use for user-facing route structure and route-local presentation logic.
+- `app/api/` — Route Handlers and HTTP endpoints
+  Use for auth handlers, integrations, webhooks, and request/response boundaries.
+- `app/generated/prisma/` — generated Prisma output
+  Do not hand-edit generated files.
+- `lib/` — shared application code and system boundaries
+  Put reusable helpers, integration wiring, and server/client boundaries here.
+- `lib/db.ts` — shared Prisma client singleton
+  This is the single application entry point for database access.
+- `lib/auth.ts` — server auth configuration
+  Server-only Better Auth wiring, adapters, and session shape live here.
+- `lib/auth-client.ts` — client auth helpers
+  Client components should use this instead of importing server auth modules.
+- `lib/require-auth.ts` — auth enforcement helpers
+  Use for `requireAuth()`, `requireAdmin()`, and optional session access.
+- `proxy.ts` — fast routing and auth guard layer
+  This is a UX and redirect layer, not authoritative authorization.
+- `prisma/` — Prisma 7 schema, migrations, and seed data
+  `schema.prisma` defines data shape. `migrations/` is versioned schema history. `seed.ts` bootstraps local data.
+- `public/` — static assets
+  Use for files served directly without application logic.
+- `specs/` — product, feature, and implementation specs
+  Read relevant specs before changing behavior or architecture.
+- `.agents/skills/` — repo-local Codex skills and workflow definitions
+  Use these as workflow shortcuts, not as replacements for repo rules.
+
+## Prisma rules
+- Prisma 7 is the only ORM for application data access.
+- Use the shared client in `lib/db.ts`. Do not create ad hoc Prisma clients.
+- Schema changes belong in `prisma/schema.prisma`.
+- Use versioned migrations for normal schema changes.
+- Do not use `db push` as the default workflow for committed schema changes.
+- Keep authorization and ownership checks in Prisma query predicates, not post-query filtering.
+
+## Client/server boundaries
+- Never import `lib/db.ts` into `"use client"` files.
+- Never import `lib/auth.ts` into `"use client"` files.
+- In client code, use `lib/auth-client.ts` for auth actions and session hooks.
+- Keep database access, auth enforcement, and secrets on the server.
 
 ## Before writing code
 1. Read the relevant spec in `specs/` when one exists.
@@ -40,6 +75,8 @@ Tailwind v4 · shadcn/ui · Zod v4
 - Never use middleware.ts — it is proxy.ts in Next.js 16
 - Never filter data in JavaScript arrays — use Prisma WHERE clauses
 - Never store money as floats — always integers in cents
+- Never import server-only auth or DB modules into client components
+- Never hand-edit `app/generated/prisma/*`
 
 ## Collaboration style
 - Assume the user is learning web development and system design.
