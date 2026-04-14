@@ -1,3 +1,4 @@
+import "./globals.css";
 import { Manrope, Inter, Geist } from 'next/font/google'
 import { cn } from "@/lib/utils";
 

@@ -7,6 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
@@ -51,6 +52,7 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  --surface: oklch(0.97 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -81,11 +83,18 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --color-genre-action: #5b3fc4;
+  --color-genre-rpg: #355ad8;
+  --color-genre-sports: #0f766e;
+  --color-genre-strategy: #475569;
+  --color-genre-horror: #3f3f46;
+  --color-genre-adventure: #8b5a1d;
 }
 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
+  --surface: #131c31;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -115,6 +124,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --color-genre-action: #5b3fc4;
+  --color-genre-rpg: #355ad8;
+  --color-genre-sports: #0f766e;
+  --color-genre-strategy: #475569;
+  --color-genre-horror: #2f3138;
+  --color-genre-adventure: #8b5a1d;
 }
 
 @layer base {
@@ -126,5 +141,12 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  [data-known-genre="false"] {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   }
 }
